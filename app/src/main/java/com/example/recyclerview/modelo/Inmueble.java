@@ -1,4 +1,4 @@
-package com.luissoft.ejemplorecycler.modelo;
+package com.example.recyclerview.modelo;
 
 public class Inmueble {
 
