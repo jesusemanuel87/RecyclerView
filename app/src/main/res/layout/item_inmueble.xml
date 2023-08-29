@@ -33,9 +33,18 @@
 
         <ImageView
             android:id="@+id/foto"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            tools:srcCompat="@tools:sample/avatars" />
+            android:layout_width="210dp"
+            android:layout_height="238dp"
+            android:layout_marginTop="44dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.466"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvPrecio"
+            app:layout_constraintVertical_bias="0.105"
+            tools:srcCompat="@tools:sample/avatars"
+
+            />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

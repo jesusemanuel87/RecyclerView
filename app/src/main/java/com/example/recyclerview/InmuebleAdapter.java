@@ -1,6 +1,7 @@
 package com.example.recyclerview;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,6 +11,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.example.recyclerview.modelo.Inmueble;
 
 import java.util.List;
@@ -36,14 +39,23 @@ public class InmuebleAdapter extends RecyclerView.Adapter<InmuebleAdapter.ViewHo
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+
+        Log.d("salida ",inmuebles.get(position).getUrl());
+
         holder.direccion.setText(inmuebles.get(position).getDireccion());
         holder.precio.setText(inmuebles.get(position).getPrecion()+"");
 
+        Glide.with(context)
+                .load(inmuebles.get(position).getUrl())
+                .diskCacheStrategy(DiskCacheStrategy.ALL)
+                .fitCenter()
+                .override(210,238)
+                .into(holder.foto);
     }
 
     @Override
     public int getItemCount() {
-        return 0;
+        return inmuebles.size();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder{
